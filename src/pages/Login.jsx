@@ -79,7 +79,7 @@ function Login() {
       <div className="lg:w-1/2">
         <img
           className="w-full h-full object-cover rounded-l-3xl"
-          src="./src/assets/bg-login.svg"
+          src="./src/assets/studying.jpeg"
           alt="Login Background"
         />
       </div>

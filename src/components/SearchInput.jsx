@@ -4,7 +4,7 @@ function SearchInput() {
   return (
     <div>
       <form className="max-w-md mx-auto">
-        <div className="relative">
+        <div className="relative ">
           <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
             <svg
               className="w-4 h-4 text-white dark:text-gray-400"

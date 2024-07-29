@@ -7,6 +7,7 @@ import Aside from "./components/Aside";
 import SearchInput from "./components/SearchInput";
 import Navbar from "./components/Navbar";
 import Home from "./pages/DashboardHomeUser";
+import CardCompleteCourse from "./components/CardCompleteCourse";
 // import AlertCard from "./components/Alert";
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
         <Route path="/sidebar" element={<Aside />} />
         <Route path="/search" element={<SearchInput />} />
         <Route path="/navbar" element={<Navbar />} />
-        {/* <Route path="/alert" element={<AlertCard />} /> */}
+        <Route path="/ccc" element={<CardCompleteCourse />} />
       </Routes>
     </Router>
   );
