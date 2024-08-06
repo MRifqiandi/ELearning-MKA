@@ -17,6 +17,7 @@ export default {
         "title-card": "#5e5e5e",
         "btn-card": "#489CFF",
         "title-home": "#369fff",
+        "card-ra": "#DBDBDB",
       },
     },
   },

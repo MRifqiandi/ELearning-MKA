@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "/src/Loader.css"; // Impor file CSS
 
 function Login() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    // Simulate an API call
+    setTimeout(() => {
+      setIsLoading(false);
+      setFadeOut(true);
+      setTimeout(() => {
+        navigate("/");
+      }, 1000); // Match this duration with the CSS transition duration
+    }, 2000);
+  };
+
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row">
+    <div
+      className={`min-h-screen flex flex-col lg:flex-row ${
+        fadeOut ? "fade-out" : ""
+      }`}
+    >
       <div className="lg:w-1/2 flex flex-col p-5 lg:pt-28 lg:p-32">
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
           <h1 className="text-4xl font-be-vietnam-pro font-medium">
@@ -13,7 +37,10 @@ function Login() {
             Yuk, Belajar lagi bersama kita🚀
           </h2>
         </div>
-        <form className="mt-8 flex flex-col gap-5 sm:p-10 lg:p-0 font-be-vietnam-pro">
+        <form
+          className="mt-8 flex flex-col gap-5 sm:p-10 lg:p-0 font-be-vietnam-pro"
+          onSubmit={handleLogin}
+        >
           <div className="flex flex-col gap-6">
             <div className="flex flex-col">
               <label className="font-medium">Email address</label>
@@ -39,6 +66,7 @@ function Login() {
               />
             </div>
           </div>
+
           <div className="flex gap-1.5">
             <input type="checkbox" className="" />
             <label className="font-be-vietnam-pro font-medium text-xs">
@@ -46,8 +74,12 @@ function Login() {
             </label>
           </div>
           <div className="flex items-center justify-center pt-3">
-            <button className="w-96 h-9 bg-submit-login rounded-lg text-white font-be-vietnam-pro font-bold hover:bg-opacity-90">
-              Login
+            <button
+              type="submit"
+              className="w-96 h-9 bg-submit-login rounded-lg text-white font-be-vietnam-pro font-bold hover:bg-opacity-90 flex items-center justify-center"
+              disabled={isLoading}
+            >
+              {isLoading ? <div className="loader" /> : "Login"}
             </button>
           </div>
           <div>
@@ -64,6 +96,7 @@ function Login() {
             </button>
             <button className="flex items-center justify-center content-center border-solid border-2 border-slate-300 rounded-xl w-52 h-10 gap-3 font-be-vietnam-pro font-medium hover:bg-gray-100 cursor-pointer">
               <img src="./src/assets/apple.svg" />
+
               <label>Sign in with apple</label>
             </button>
           </div>

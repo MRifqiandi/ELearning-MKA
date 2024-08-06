@@ -4,6 +4,7 @@ import SearchInput from "/src/components/SearchInput";
 import PageHomeComp from "../components/PageHomeComp";
 import CardCompleteCourse from "../components/CardCompleteCourse";
 import SearchFuncMobile from "../components/SearchFuncMobile";
+import Instructor from "../components/Instructor";
 
 function DashboardHomeUser() {
   return (
@@ -34,7 +35,11 @@ function DashboardHomeUser() {
               <h1 className="font-bold font-be-vietnam-pro text-2xl">
                 Synchronous
               </h1>
-              <a className="text-sm flex items-end cursor-pointer text-btn-card hover:text-opacity-80">
+
+              <a
+                href="/dashboardsync"
+                className="text-sm flex items-end cursor-pointer text-btn-card hover:text-opacity-80"
+              >
                 View all
               </a>
             </div>
@@ -46,7 +51,7 @@ function DashboardHomeUser() {
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-4 p-4">
+          <div className="flex flex-wrap  justify-center items-center gap-4 p-4">
             <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
             <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
             <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
@@ -68,7 +73,10 @@ function DashboardHomeUser() {
               <h1 className="font-bold font-be-vietnam-pro text-2xl">
                 Asynchronous
               </h1>
-              <a className="text-sm flex items-end cursor-pointer text-btn-card hover:text-opacity-80">
+              <a
+                href="/dashboardasync"
+                className="text-sm flex items-end cursor-pointer text-btn-card hover:text-opacity-80"
+              >
                 View all
               </a>
             </div>
@@ -87,6 +95,9 @@ function DashboardHomeUser() {
             <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
             <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
             <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+          </div>
+          <div className="pt-10">
+            <Instructor />
           </div>
         </div>
       </div>
