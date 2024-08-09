@@ -1,12 +1,12 @@
 import React from "react";
 import PaginationCda from "../components/PaginationCda";
 import NavbarReact from "../components/NavbarReact";
-import ButtonBuyClass from "../components/ButtonBuyClass";
+import ButtonRegisterClass from "../components/ButtonRegisterClassUser";
 import DiscountPrice from "../components/DiscountPrice";
 import CoursesPaginationDesktop from "../components/CoursesPaginationDesktop";
 import DropdownCda from "../components/DropdownCda";
 
-function ClassDetailsAsync() {
+function RegisterClassUser() {
   return (
     <div>
       <NavbarReact />
@@ -56,19 +56,15 @@ function ClassDetailsAsync() {
             </div>
           </div>
           <div className="hidden lg:flex lg:flex-col lg:pr-10 gap-10  lg:pl-14">
-            <div className="flex flex-col w-[386px] h-[448px] p-3  bg-white shadow-xl">
-              <div>
-                <div className="flex items-center gap-5 ">
-                  <h1 className="font-bold text-3xl">Gratis</h1>
-                  <h3 className="text-gray-400">
-                    <s> Rp 6.000.000 </s>
-                  </h3>
-                </div>
-
-                <DiscountPrice />
+            <div className="flex flex-col w-[386px] p-3  bg-white shadow-xl">
+              <div className="flex flex-col gap-2 ">
+                <h1 className="font-bold text-xl">Selamat Belajar yaa 😁</h1>
+                <h2 className="text-md text-gray-600 font-light">
+                  Silahkan daftar agar kamu bisa belajar sepenuhnya !
+                </h2>
               </div>
               <div>
-                <ButtonBuyClass />
+                <ButtonRegisterClass />
               </div>
               <div className="flex flex-col gap-3">
                 <div className="flex gap-2">
@@ -127,11 +123,39 @@ function ClassDetailsAsync() {
           </div>
         </div>
       </div>
-      <div className="lg:hidden">
-        <ButtonBuyClass />
+      <div className="lg:hidden p-10 flex justify-center">
+        <div className="flex flex-col w-[386px] p-3  bg-white shadow-xl">
+          <div className="flex flex-col items-center gap-2 ">
+            <h1 className="font-bold text-xl">Selamat Belajar yaa 😁</h1>
+            <h2 className="text-md text-gray-600 font-light">
+              Silahkan daftar agar kamu bisa belajar sepenuhnya !
+            </h2>
+          </div>
+          <div className="flex flex-col gap-3 pt-3">
+            <div className="flex gap-2">
+              <img className="w-6" src="/src/assets/section.svg" />
+              <h4 className="text-gray-600">22 Section</h4>
+            </div>
+            <div className="flex gap-2">
+              <img className="w-6" src="/src/assets/lectures.svg" />
+              <h4 className="text-gray-600">152 Lectures</h4>
+            </div>
+            <div className="flex gap-2">
+              <img className="w-6" src="/src/assets/live.svg" />
+              <h4 className="text-gray-600">21h 33m total lenghts</h4>
+            </div>
+            <div className="flex gap-2">
+              <img className="w-6" src="/src/assets/volume.svg" />
+              <h4 className="text-gray-600">English</h4>
+            </div>
+          </div>
+          <div>
+            <ButtonRegisterClass />
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-export default ClassDetailsAsync;
+export default RegisterClassUser;

@@ -1,6 +1,6 @@
 import React from "react";
-import DiscountPrice from "./DiscountPrice";
-import ButtonBuyClass from "./ButtonBuyClass";
+// import DiscountPrice from "./DiscountPrice";
+// import ButtonBuyClass from "./ButtonBuyClass";
 
 function Cart() {
   return (

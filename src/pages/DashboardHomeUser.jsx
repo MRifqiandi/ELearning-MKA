@@ -1,10 +1,12 @@
-import CardComp from "/src/components/CardComp";
 import Aside from "/src/components/Aside";
 import SearchInput from "/src/components/SearchInput";
 import PageHomeComp from "../components/PageHomeComp";
 import CardCompleteCourse from "../components/CardCompleteCourse";
 import SearchFuncMobile from "../components/SearchFuncMobile";
 import Instructor from "../components/Instructor";
+import { Link } from "react-router-dom";
+import CardCompAsync from "../components/CardCompAsync";
+import CardCompSync from "../components/CardCompSync";
 
 function DashboardHomeUser() {
   return (
@@ -52,12 +54,12 @@ function DashboardHomeUser() {
           </div>
 
           <div className="flex flex-wrap  justify-center items-center gap-4 p-4">
-            <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-            <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-            <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-            <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-            <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-            <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+            <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+            <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+            <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+            <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+            <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+            <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
           </div>
           <div className="flex w-full flex-col justify-center items-center gap-8 pt-14">
             <div className="w-80 h-1 bg-[#F0F0F0] sm:w-96 lg:w-[900px]"></div>
@@ -89,12 +91,24 @@ function DashboardHomeUser() {
           </div>
 
           <div className="flex flex-wrap justify-center items-center gap-4 p-4">
-            <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-            <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-            <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-            <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-            <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-            <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+            <Link to="/cda">
+              <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+            </Link>
+            <Link to="/cda">
+              <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+            </Link>
+            <Link to="/cda">
+              <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+            </Link>
+            <Link to="/cda">
+              <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+            </Link>
+            <Link to="/cda">
+              <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+            </Link>
+            <Link to="/cda">
+              <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+            </Link>
           </div>
           <div className="pt-10">
             <Instructor />

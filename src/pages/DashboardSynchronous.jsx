@@ -1,10 +1,10 @@
 import React from "react";
 import SearchFuncMobile from "../components/SearchFuncMobile";
 import PageHomeComp from "../components/PageHomeComp";
-import CardComp from "/src/components/CardComp";
 import Aside from "/src/components/Aside";
 import SearchInput from "/src/components/SearchInput";
 import RecentActivity from "../components/RecentActivity";
+import CardCompSync from "../components/CardCompSync";
 
 function DashboardSynchronous() {
   return (
@@ -49,12 +49,12 @@ function DashboardSynchronous() {
             </div>
 
             <div className="flex flex-wrap justify-center items-center gap-4 p-4">
-              <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-              <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-              <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-              <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-              <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-              <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+              <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+              <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+              <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+              <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+              <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+              <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
             </div>
             <RecentActivity />
           </div>

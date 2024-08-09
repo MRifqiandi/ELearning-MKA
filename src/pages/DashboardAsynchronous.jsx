@@ -1,11 +1,11 @@
 import React from "react";
 import SearchFuncMobile from "../components/SearchFuncMobile";
 import PageHomeComp from "../components/PageHomeComp";
-import CardComp from "/src/components/CardComp";
 import Aside from "/src/components/Aside";
 import SearchInput from "/src/components/SearchInput";
 import RecentActivity from "../components/RecentActivity";
 import { Link } from "react-router-dom";
+import CardCompAsync from "../components/CardCompAsync";
 
 function DashboardAsynchronous() {
   return (
@@ -51,22 +51,22 @@ function DashboardAsynchronous() {
 
             <div className="flex flex-wrap justify-center items-center gap-4 p-4">
               <Link to="/cda">
-                <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+                <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
               </Link>
               <Link to="/cda">
-                <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+                <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
               </Link>
               <Link to="/cda">
-                <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+                <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
               </Link>
               <Link to="/cda">
-                <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+                <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
               </Link>
               <Link to="/cda">
-                <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+                <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
               </Link>
               <Link to="/cda">
-                <CardComp className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+                <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
               </Link>
             </div>
 
