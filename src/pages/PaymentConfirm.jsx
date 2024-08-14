@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function PaymentConfirm() {
   const navigate = useNavigate();
-  const [timeLeft, setTimeLeft] = useState(6); // Initial countdown time in seconds
+  const [timeLeft, setTimeLeft] = useState(4); // Initial countdown time in seconds
 
   useEffect(() => {
     // Set interval to update countdown every second
@@ -13,8 +13,8 @@ function PaymentConfirm() {
 
     // Set timeout to navigate to next page after countdown ends
     const timer = setTimeout(() => {
-      navigate("/cda"); // Replace with your desired route
-    }, 6000); // 3 seconds delay
+      navigate("/registerclass"); // Replace with your desired route
+    }, 4000); // 3 seconds delay
     return () => {
       clearInterval(interval);
       clearTimeout(timer);

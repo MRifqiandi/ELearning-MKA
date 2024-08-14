@@ -1,37 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 import PaginationCda from "../components/PaginationCda";
-import NavbarReact from "../components/NavbarReact";
-import ButtonRegisterClass from "../components/ButtonRegisterClassUser";
-import DiscountPrice from "../components/DiscountPrice";
+
+import Aside from "../components/Aside";
 import CoursesPaginationDesktop from "../components/CoursesPaginationDesktop";
 import DropdownCda from "../components/DropdownCda";
+import RegisterPersonalDataUser from "../components/RegisterPersonalDataUser";
+import RegisterExtraUser from "../components/RegisterExtraUser";
 
 function RegisterClassUser() {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [step, setStep] = useState(1); // State untuk mengatur step
+
+  const handleRegisterClick = () => {
+    setIsPopupVisible(true);
+    setStep(1); // Reset ke step 1 setiap kali popup dibuka
+  };
+
+  const handleNextStep = () => {
+    setStep(2); // Pindah ke step 2
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupVisible(false);
+  };
+
+  const handleSubmit = () => {
+    // Logic untuk mengirim data atau tindakan yang diinginkan
+    alert("Data telah dikirim!");
+    handleClosePopup(); // Menutup popup setelah mengirim
+  };
   return (
     <div>
-      <NavbarReact />
-      <div className="lg:p-10">
-        <div className="hidden lg:flex lg:flex-col lg:pl-10  ">
-          <h3>Development / Mobile Engineer</h3>
+      <div className="fixed z-10 lg:static lg:translate-x-0 transform lg:transform-none md:w-64 w-64">
+        <Aside />
+      </div>
+      <div className="flex-1 lg:pl-72 lg:pt-5 md:pl-64 lg:pr-8 transition-all duration-300">
+        <div className="hidden lg:flex lg:flex-col pt-4">
           <h1 className="font-bold text-2xl">Javascript Advanced</h1>
           <div className="flex gap-3">
             <h4 className="text-red-600">Steven Arnatouvic</h4>
-            <div className="flex">
-              <img src="/src/assets/star.svg" />
+            <div className="flex items-center">
+              <img src="/src/assets/star.svg" alt="Star" />
               <h4>4.8 (1,812 ratings)</h4>
             </div>
           </div>
         </div>
 
-        <div className="flex w-full">
-          <div className="lg:pl-10 lg:pb-4 lg:pt-2">
+        <div className="flex w-full flex-col lg:flex-row md:flex-row">
+          <div className="lg:pb-4 lg:pt-2">
             <img
               src="/src/assets/Thumbnail.svg"
               className="w-auto lg:rounded-2xl "
             />
             {/* Desktop */}
             <div className="lg:flex lg:w-[805px] pt-4 px-4 hidden justify-between">
-              <div className="flex lg:pl-2 gap-3">
+              <div className="flex  gap-3">
                 <img src="/src/assets/logo-courses.svg" className="w-7" />
                 <div>
                   <h3 className="text-blue-700 text-sm font-bold">
@@ -40,7 +63,7 @@ function RegisterClassUser() {
                   <h4 className=" text-xs font-medium">IT Consultant</h4>
                 </div>
               </div>
-              <div className="flex pr-4 gap-3">
+              <div className="flex gap-3">
                 <div className="flex justify-center items-center gap-1 text-gray-500">
                   <img src="/src/assets/student.svg" />
                   <p className="text-sm">2.3k</p>
@@ -55,16 +78,21 @@ function RegisterClassUser() {
               <CoursesPaginationDesktop />
             </div>
           </div>
-          <div className="hidden lg:flex lg:flex-col lg:pr-10 gap-10  lg:pl-14">
-            <div className="flex flex-col w-[386px] p-3  bg-white shadow-xl">
+          <div className="hidden lg:flex lg:flex-col gap-10">
+            <div className="flex flex-col w-[386px] p-3 bg-white shadow-xl">
               <div className="flex flex-col gap-2 ">
                 <h1 className="font-bold text-xl">Selamat Belajar yaa 😁</h1>
                 <h2 className="text-md text-gray-600 font-light">
                   Silahkan daftar agar kamu bisa belajar sepenuhnya !
                 </h2>
               </div>
-              <div>
-                <ButtonRegisterClass />
+              <div className="py-5">
+                <button
+                  onClick={handleRegisterClick}
+                  className="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded"
+                >
+                  Daftar
+                </button>
               </div>
               <div className="flex flex-col gap-3">
                 <div className="flex gap-2">
@@ -86,7 +114,7 @@ function RegisterClassUser() {
               </div>
             </div>
             {/* Dropdown Desktop  */}
-            <div className="w-full lg:w-auto  flex flex-col gap-3 rounded bg-gray-300 p-2">
+            <div className="w-full  flex flex-col gap-3 rounded bg-gray-300 p-2">
               <DropdownCda />
             </div>
           </div>
@@ -123,7 +151,7 @@ function RegisterClassUser() {
           </div>
         </div>
       </div>
-      <div className="lg:hidden p-10 flex justify-center">
+      <div className="lg:hidden md:pl-64 p-10 flex justify-center">
         <div className="flex flex-col w-[386px] p-3  bg-white shadow-xl">
           <div className="flex flex-col items-center gap-2 ">
             <h1 className="font-bold text-xl">Selamat Belajar yaa 😁</h1>
@@ -149,11 +177,55 @@ function RegisterClassUser() {
               <h4 className="text-gray-600">English</h4>
             </div>
           </div>
-          <div>
-            <ButtonRegisterClass />
+          <div className="pt-5">
+            <button
+              onClick={handleRegisterClick}
+              className="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded"
+            >
+              Daftar
+            </button>
           </div>
         </div>
       </div>
+
+      {isPopupVisible && (
+        <div className="fixed inset-0 z-50  flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-5 rounded-lg shadow-lg max-w-lg w-full">
+            {step === 1 && (
+              <>
+                <RegisterPersonalDataUser />
+                <div className="flex flex-col gap-2 pt-6">
+                  <button
+                    onClick={handleNextStep}
+                    className="bg-blue-500 text-white font-bold py-2 px-4 rounded"
+                  >
+                    Lanjutkan
+                  </button>
+                  <button
+                    onClick={handleClosePopup}
+                    className="bg-red-500 text-white font-bold py-2 px-4 rounded"
+                  >
+                    Tutup
+                  </button>
+                </div>
+              </>
+            )}
+            {step === 2 && (
+              <>
+                <RegisterExtraUser />
+                <div className="flex justify-center pt-6">
+                  <button
+                    onClick={handleSubmit}
+                    className="bg-blue-500 w-full text-white font-bold py-2 px-4 rounded"
+                  >
+                    Kirim
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

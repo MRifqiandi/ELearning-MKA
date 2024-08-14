@@ -1,70 +1,78 @@
 import React from "react";
 import PaginationCda from "../components/PaginationCda";
-import NavbarReact from "../components/NavbarReact";
 import ButtonBuyClass from "../components/ButtonBuyClass";
 import DiscountPrice from "../components/DiscountPrice";
 import CoursesPaginationDesktop from "../components/CoursesPaginationDesktop";
 import DropdownCda from "../components/DropdownCda";
+import Aside from "../components/Aside";
 
 function ClassDetailsAsync() {
   return (
-    <div>
-      <NavbarReact />
-      <div className="lg:p-10">
-        <div className="hidden lg:flex lg:flex-col lg:pl-10  ">
-          <h3>Development / Mobile Engineer</h3>
-          <h1 className="font-bold text-2xl">Javascript Advanced</h1>
+    <div className="relative flex flex-col lg:flex-row">
+      {/* Sidebar */}
+      <div className="fixed z-10 lg:static lg:translate-x-0 transform lg:transform-none md:w-64 w-64">
+        <Aside />
+      </div>
+
+      {/* Content */}
+      <div className="flex-1 lg:pl-5 md:pl-64 lg:pr-8 transition-all duration-300">
+        <div className="hidden lg:flex lg:flex-col pt-6 ">
+          <h1 className="font-bold text-3xl">Javascript Advanced</h1>
           <div className="flex gap-3">
             <h4 className="text-red-600">Steven Arnatouvic</h4>
-            <div className="flex">
-              <img src="/src/assets/star.svg" />
+            <div className="flex items-center">
+              <img src="/src/assets/star.svg" alt="Star" />
               <h4>4.8 (1,812 ratings)</h4>
             </div>
           </div>
         </div>
 
-        <div className="flex w-full">
-          <div className="lg:pl-10 lg:pb-4 lg:pt-2">
+        <div className="flex w-full flex-col lg:flex-row md:flex-row">
+          <div className="lg:pb-4 lg:pt-2">
             <img
               src="/src/assets/Thumbnail.svg"
-              className="w-auto lg:rounded-2xl "
+              className="w-auto lg:rounded-2xl"
+              alt="Thumbnail"
             />
             {/* Desktop */}
-            <div className="lg:flex lg:w-[805px] pt-4 px-4 hidden justify-between">
-              <div className="flex lg:pl-2 gap-3">
-                <img src="/src/assets/logo-courses.svg" className="w-7" />
+            <div className="hidden lg:flex lg:w-[805px] pt-4 px-4 justify-between">
+              <div className="flex gap-3">
+                <img
+                  src="/src/assets/logo-courses.svg"
+                  className="w-7"
+                  alt="Logo Courses"
+                />
                 <div>
                   <h3 className="text-blue-700 text-sm font-bold">
                     Media Kreasi Abadi
                   </h3>
-                  <h4 className=" text-xs font-medium">IT Consultant</h4>
+                  <h4 className="text-xs font-medium">IT Consultant</h4>
                 </div>
               </div>
-              <div className="flex pr-4 gap-3">
+              <div className="flex gap-3">
                 <div className="flex justify-center items-center gap-1 text-gray-500">
-                  <img src="/src/assets/student.svg" />
+                  <img src="/src/assets/student.svg" alt="Student Icon" />
                   <p className="text-sm">2.3k</p>
                 </div>
                 <div className="flex justify-center items-center gap-1 text-gray-500">
-                  <img src="/src/assets/review.svg" />
+                  <img src="/src/assets/review.svg" alt="Review Icon" />
                   <p className="text-sm">1.4k</p>
                 </div>
               </div>
             </div>
-            <div className=" lg:w-5/12 pt-5 hidden lg:flex">
+            <div className="hidden lg:flex lg:w-5/12 pt-5">
               <CoursesPaginationDesktop />
             </div>
           </div>
-          <div className="hidden lg:flex lg:flex-col lg:pr-10 gap-10  lg:pl-14">
-            <div className="flex flex-col w-[386px] h-[448px] p-3  bg-white shadow-xl">
+          <div className="hidden lg:flex lg:flex-col gap-10">
+            <div className="flex flex-col w-[386px] h-[448px] p-3 bg-white shadow-xl z-10 relative">
               <div>
-                <div className="flex items-center gap-5 ">
+                <div className="flex items-center gap-5">
                   <h1 className="font-bold text-3xl">Gratis</h1>
                   <h3 className="text-gray-400">
-                    <s> Rp 6.000.000 </s>
+                    <s>Rp 6.000.000</s>
                   </h3>
                 </div>
-
                 <DiscountPrice />
               </div>
               <div>
@@ -72,52 +80,69 @@ function ClassDetailsAsync() {
               </div>
               <div className="flex flex-col gap-3">
                 <div className="flex gap-2">
-                  <img className="w-6" src="/src/assets/section.svg" />
+                  <img
+                    className="w-6"
+                    src="/src/assets/section.svg"
+                    alt="Section Icon"
+                  />
                   <h4 className="text-gray-600">22 Section</h4>
                 </div>
                 <div className="flex gap-2">
-                  <img className="w-6" src="/src/assets/lectures.svg" />
+                  <img
+                    className="w-6"
+                    src="/src/assets/lectures.svg"
+                    alt="Lectures Icon"
+                  />
                   <h4 className="text-gray-600">152 Lectures</h4>
                 </div>
                 <div className="flex gap-2">
-                  <img className="w-6" src="/src/assets/live.svg" />
-                  <h4 className="text-gray-600">21h 33m total lenghts</h4>
+                  <img
+                    className="w-6"
+                    src="/src/assets/live.svg"
+                    alt="Live Icon"
+                  />
+                  <h4 className="text-gray-600">21h 33m total lengths</h4>
                 </div>
                 <div className="flex gap-2">
-                  <img className="w-6" src="/src/assets/volume.svg" />
+                  <img
+                    className="w-6"
+                    src="/src/assets/volume.svg"
+                    alt="Volume Icon"
+                  />
                   <h4 className="text-gray-600">English</h4>
                 </div>
               </div>
             </div>
-            {/* Dropdown Desktop  */}
-            <div className="w-full lg:w-auto  flex flex-col gap-3 rounded bg-gray-300 p-2">
+            {/* Dropdown Desktop */}
+            <div className="w-full lg:w-auto flex flex-col gap-3 rounded bg-gray-300 p-2 z-10 relative">
               <DropdownCda />
             </div>
           </div>
         </div>
 
         {/* Mobile */}
-        <div className="">
-          <div className=" lg:hidden">
-            <h1 className="font-bold pt-4 pl-4 text-xl">JAVASCRIPT ADVANCED</h1>
-          </div>
-          <div className="flex  lg:hidden pt-4 px-4 justify-between">
+        <div className="lg:hidden">
+          <div className="flex pt-4 px-4 justify-between">
             <div className="flex gap-3">
-              <img src="/src/assets/logo-courses.svg" className="w-7" />
+              <img
+                src="/src/assets/logo-courses.svg"
+                className="w-7"
+                alt="Logo Courses"
+              />
               <div>
                 <h3 className="text-blue-700 text-sm font-bold">
                   Media Kreasi Abadi
                 </h3>
-                <h4 className=" text-xs font-medium">IT Consultant</h4>
+                <h4 className="text-xs font-medium">IT Consultant</h4>
               </div>
             </div>
             <div className="flex pr-4 gap-3">
               <div className="flex justify-center items-center gap-1 text-gray-500">
-                <img src="/src/assets/student.svg" />
+                <img src="/src/assets/student.svg" alt="Student Icon" />
                 <p className="text-sm">2.3k</p>
               </div>
               <div className="flex justify-center items-center gap-1 text-gray-500">
-                <img src="/src/assets/review.svg" />
+                <img src="/src/assets/review.svg" alt="Review Icon" />
                 <p className="text-sm">1.4k</p>
               </div>
             </div>
@@ -126,9 +151,9 @@ function ClassDetailsAsync() {
             <PaginationCda />
           </div>
         </div>
-      </div>
-      <div className="lg:hidden">
-        <ButtonBuyClass />
+        <div className="lg:hidden mt-4">
+          <ButtonBuyClass />
+        </div>
       </div>
     </div>
   );
