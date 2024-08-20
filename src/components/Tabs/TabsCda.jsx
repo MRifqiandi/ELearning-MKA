@@ -2,7 +2,8 @@ import { Tabs } from "flowbite-react";
 import { HiAdjustments, HiUserCircle } from "react-icons/hi";
 import { MdDashboard } from "react-icons/md";
 // import StatusCourses from "./StatusCourses";
-import DropdownCda from "./DropdownCda";
+import DropdownCda from "../Dropdown/DropdownCda";
+import CardMentor from "../Card/CardMentor";
 
 function PaginationCda() {
   return (
@@ -26,8 +27,11 @@ function PaginationCda() {
         and styling.
       </Tabs.Item>
       <Tabs.Item active title="Courses" icon={HiUserCircle}>
-        <div className=" flex justify-center lg:justify-start lg:flex p-2">
-          <div className="w-full lg:w-96 flex flex-col gap-3  rounded-lg bg-gray-300 p-2">
+        <div className="flex flex-col gap-5 lg:hidden justify-center p-2">
+          <div className="flex lg:hidden gap-3">
+            <CardMentor />
+          </div>
+          <div className="w-full gap-3 rounded-lg bg-gray-300 p-2">
             <DropdownCda />
           </div>
         </div>

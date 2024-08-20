@@ -1,0 +1,70 @@
+{
+  "materi": [
+    {
+      "id": 1,
+      "judul": "Pengenalan React",
+      "content": "This is the first part of a very long text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "label": "Introduction"
+    },
+    {
+      "id": 2,
+      "judul": "Komponen di React",
+      "content": "Penjelasan tentang komponen di React. React allows developers to build reusable UI components. Components can be functional or class-based, and they manage their own state and lifecycle. Understanding the component lifecycle is crucial for handling side effects and data fetching. Components interact with each other through props and state management. By leveraging component-based architecture, applications become more modular and maintainable.",
+      "label": "Components"
+    },
+    {
+      "id": 3,
+      "judul": "State Management",
+      "content": "State management is an essential concept in React. It involves managing data that can change over time and affect the rendering of the UI. React provides built-in state management through the `useState` hook for functional components and `setState` method for class components. For complex applications, libraries such as Redux or Context API are used for global state management. Understanding how to properly manage state ensures that components react to changes efficiently.",
+      "label": "State Management"
+    },
+    {
+      "id": 4,
+      "judul": "Handling Events",
+      "content": "Handling events is a key aspect of React development. React provides a synthetic event system that wraps around the native DOM events. Event handlers are passed as props to components and can handle user interactions such as clicks, form submissions, and more. React's event system is designed to be consistent across different browsers, making it easier to handle events in a cross-browser compatible way.",
+      "label": "Handling Events"
+    },
+    {
+      "id": 5,
+      "judul": "Lifecycle Methods",
+      "content": "Lifecycle methods are hooks in React class components that allow you to run code at specific points in a component's lifecycle. Methods like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` help manage side effects and perform actions such as data fetching and clean-up. In functional components, similar behavior can be achieved using the `useEffect` hook, which provides a way to handle side effects and dependencies.",
+      "label": "Lifecycle Methods"
+    },
+    {
+      "id": 6,
+      "judul": "Hooks",
+      "content": "Hooks are a feature introduced in React 16.8 that allow you to use state and other React features in functional components. Common hooks include `useState`, `useEffect`, `useContext`, and `useReducer`. Hooks provide a way to manage state and side effects in functional components without the need for class-based components. They are designed to make it easier to reuse stateful logic and create custom hooks for more complex scenarios.",
+      "label": "Hooks"
+    },
+    {
+      "id": 7,
+      "judul": "Context API",
+      "content": "The Context API is a feature in React that allows you to manage global state across your application without having to pass props down manually through every level of the component tree. By creating a context with `React.createContext`, you can provide a global value and consume it in any component that needs it. This is useful for scenarios such as theme management, user authentication, and more.",
+      "label": "Context API"
+    },
+    {
+      "id": 8,
+      "judul": "Routing",
+      "content": "Routing in React is typically managed using libraries such as `react-router-dom`. Routing allows you to navigate between different views or pages in a single-page application. With React Router, you can define routes using components like `BrowserRouter`, `Route`, and `Link`. Handling routes and navigation properly ensures a smooth user experience and proper management of application state.",
+      "label": "Routing"
+    },
+    {
+      "id": 9,
+      "judul": "Performance Optimization",
+      "content": "Performance optimization is important for ensuring that React applications run smoothly and efficiently. Techniques include code splitting, lazy loading components with `React.lazy` and `Suspense`, using memoization techniques like `React.memo` and `useMemo`, and avoiding unnecessary re-renders. Profiling and analyzing performance using React DevTools can help identify and resolve performance bottlenecks.",
+      "label": "Performance Optimization"
+    },
+    {
+      "id": 10,
+      "judul": "Testing",
+      "content": "Testing is crucial for ensuring the reliability and functionality of React applications. React provides testing utilities such as `React Testing Library` and `Enzyme` to test components and their interactions. Unit tests, integration tests, and end-to-end tests help ensure that components behave as expected and that the application functions correctly under various conditions. Writing effective tests improves code quality and facilitates maintenance.",
+      "label": "Testing"
+    },
+    {
+      "id": 11,
+      "judul": "Maintenance",
+      "content": "Testing is crucial for ensuring the reliability and functionality of React applications. React provides testing utilities such as `React Testing Library` and `Enzyme` to test components and their interactions. Unit tests, integration tests, and end-to-end tests help ensure that components behave as expected and that the application functions correctly under various conditions. Writing effective tests improves code quality and facilitates maintenance.",
+      "label": "Testing"
+    }
+  ]
+}

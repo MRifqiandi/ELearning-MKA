@@ -1,7 +1,6 @@
-import React from "react";
 import { Datepicker } from "flowbite-react";
 import { Label, TextInput } from "flowbite-react";
-import DropdownJob from "./DropdownJob";
+import DropdownJob from "./Dropdown/DropdownJob";
 
 function RegisterPersonalDataUser() {
   return (

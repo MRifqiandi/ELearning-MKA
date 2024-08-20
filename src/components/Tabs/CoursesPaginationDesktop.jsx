@@ -1,10 +1,8 @@
 import { Tabs } from "flowbite-react";
-import { HiAdjustments, HiUserCircle } from "react-icons/hi";
+import { HiAdjustments } from "react-icons/hi";
 import { MdDashboard } from "react-icons/md";
-// import StatusCourses from "./StatusCourses";
-// import DropdownCda from "./DropdownCda";
 
-function PaginationCda() {
+function CoursesPaginationDesktop() {
   return (
     <Tabs aria-label="Tabs with underline" variant="underline">
       <Tabs.Item title="Tentang Kelas" icon={MdDashboard}>
@@ -29,4 +27,4 @@ function PaginationCda() {
   );
 }
 
-export default PaginationCda;
+export default CoursesPaginationDesktop;

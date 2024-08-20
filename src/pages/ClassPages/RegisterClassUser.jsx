@@ -6,21 +6,24 @@ function RegisterUser() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  const [success, setSuccess] = useState(""); // State untuk pesan sukses
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
     setError("");
-    setSuccess("");
+    setSuccess(""); // Reset pesan sukses
 
+    // Validate input
     if (!name || !email || !password) {
       setError("All fields are required.");
       return;
     }
 
+    // Get existing users from local storage
     const existingUsers = JSON.parse(localStorage.getItem("Data")) || [];
 
+    // Check if the email already exists
     const userExists = existingUsers.some((user) => user.email === email);
 
     if (userExists) {
@@ -28,20 +31,18 @@ function RegisterUser() {
       return;
     }
 
-    if (password.length < 8) {
-      setError("Password must be at least 8 characters long.");
-      return;
-    }
-
-    const newUser = { id: Date.now(), name, email, password, role: "user" };
+    // Add new user
+    const newUser = { name, email, password, role: "user" }; // Set role as "user" for simplicity
     existingUsers.push(newUser);
 
+    // Save to local storage
     localStorage.setItem("Data", JSON.stringify(existingUsers));
 
+    // Show success message and redirect
     setSuccess("Registration successful! Redirecting to login...");
     setTimeout(() => {
       navigate("/login");
-    }, 2000);
+    }, 2000); // Delay to show success message
   };
 
   return (

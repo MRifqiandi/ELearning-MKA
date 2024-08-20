@@ -1,7 +1,7 @@
 import { Card } from "flowbite-react";
-import ButtonComp from "./ButtonComp";
+import ButtonComp from "../Button/ButtonComp";
 
-function CardCompSync() {
+function CardMeetWeek() {
   return (
     <Card className="w-auto md:max-w-sm rounded-xl drop-shadow-custom-card cursor-pointer transition-transform duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-300">
       <img
@@ -11,11 +11,11 @@ function CardCompSync() {
       <div className="flex gap-14 md:gap-20">
         <div className="flex flex-col gap-4 md:gap-10">
           <div>
-            <h5 className="text-md md:text-lg font-bold tracking-tight text-gray-900 dark:text-white font-be-vietnam-pro ">
-              Class React Js
+            <h5 className="text-mds md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white font-be-vietnam-pro ">
+              Pertemuan 1
             </h5>
             <p className="text-xs font-normal text-gray-700 dark:text-gray-400 font-be-vietnam-pro">
-              35 Lessons
+              Variabel
             </p>
           </div>
           <ButtonComp />
@@ -30,4 +30,4 @@ function CardCompSync() {
   );
 }
 
-export default CardCompSync;
+export default CardMeetWeek;

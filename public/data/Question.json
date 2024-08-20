@@ -1,0 +1,47 @@
+[
+  {
+    "question": "What is React?",
+    "options": [
+      "A. JavaScript library",
+      "B. CSS framework",
+      "C. database",
+      "D. programming language"
+    ]
+  },
+  {
+    "question": "What is JSX?",
+    "options": [
+      "A. syntax extension",
+      "B. type of function",
+      "C. CSS framework",
+      "D. JavaScript compiler"
+    ]
+  },
+  {
+    "question": "What is a component in React?",
+    "options": [
+      "A. reusable piece of UI",
+      "B. type of database",
+      "C. JavaScript function",
+      "D. CSS rule"
+    ]
+  },
+  {
+    "question": "How do you create a state in React?",
+    "options": [
+      "A. useState()",
+      "B. createState()",
+      "C. setState()",
+      "D. new State()"
+    ]
+  },
+  {
+    "question": "What is a hook in React?",
+    "options": [
+      "A. function that lets you use state",
+      "B. type of component",
+      "C. CSS selector",
+      "D. method to create components"
+    ]
+  }
+]

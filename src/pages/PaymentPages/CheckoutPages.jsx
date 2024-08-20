@@ -1,9 +1,9 @@
 import React from "react";
-import Aside from "../components/Aside";
-import Cart from "../components/Cart";
+import Aside from "../../components/Aside";
+import Cart from "../../components/Cart";
 import { Button } from "flowbite-react";
-import Payment from "../components/Payment";
-import CoursesSide from "../components/CoursesSide";
+import Payment from "../../components/Payment";
+import CoursesSide from "../../components/CoursesSide";
 import { Link } from "react-router-dom";
 
 function CheckoutPages() {

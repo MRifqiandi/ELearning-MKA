@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SearchInput from "./SearchInput";
+import SearchInput from "./SearchComp/SearchInput";
 
 function Aside() {
   const [isOpen, setIsOpen] = useState(false);

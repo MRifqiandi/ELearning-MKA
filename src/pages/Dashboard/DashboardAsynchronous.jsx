@@ -1,12 +1,13 @@
 import React from "react";
-import SearchFuncMobile from "../components/SearchFuncMobile";
-import PageHomeComp from "../components/PageHomeComp";
+import SearchFuncMobile from "../../components/SearchComp/SearchFuncMobile";
+import PageHomeComp from "../../components/Tabs/PageHomeComp";
 import Aside from "/src/components/Aside";
-import SearchInput from "/src/components/SearchInput";
-import RecentActivity from "../components/RecentActivity";
-import CardCompSync from "../components/CardCompSync";
+import SearchInput from "/src/components/SearchComp/SearchInput";
+import RecentActivity from "../../components/RecentActivity";
+import { Link } from "react-router-dom";
+import CardCompAsync from "../../components/Card/CardCompAsync";
 
-function DashboardSynchronous() {
+function DashboardAsynchronous() {
   return (
     <div>
       <div className="h-screen flex flex-col md:flex-row">
@@ -34,7 +35,7 @@ function DashboardSynchronous() {
             <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-14 lg:justify-between pt-14">
               <div className="flex gap-4 justify-center lg:justify-between w-full lg:w-auto">
                 <h1 className="font-bold font-be-vietnam-pro text-2xl">
-                  Synchronous
+                  Asynchronous
                 </h1>
                 <a className="text-sm flex items-end cursor-pointer text-btn-card hover:text-opacity-80">
                   View all
@@ -49,13 +50,26 @@ function DashboardSynchronous() {
             </div>
 
             <div className="flex flex-wrap justify-center items-center gap-4 p-4">
-              <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-              <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-              <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-              <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-              <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
-              <CardCompSync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+              <Link to="/cda">
+                <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+              </Link>
+              <Link to="/cda">
+                <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+              </Link>
+              <Link to="/cda">
+                <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+              </Link>
+              <Link to="/cda">
+                <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+              </Link>
+              <Link to="/cda">
+                <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+              </Link>
+              <Link to="/cda">
+                <CardCompAsync className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+              </Link>
             </div>
+
             <RecentActivity />
           </div>
         </div>
@@ -64,4 +78,4 @@ function DashboardSynchronous() {
   );
 }
 
-export default DashboardSynchronous;
+export default DashboardAsynchronous;

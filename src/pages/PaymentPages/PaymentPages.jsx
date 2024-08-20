@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
-import CoursesSide from "../components/CoursesSide";
-import Payment from "../components/Payment";
-import Aside from "../components/Aside";
+import CoursesSide from "../../components/CoursesSide";
+import Payment from "../../components/Payment";
+import Aside from "../../components/Aside";
 import { useNavigate } from "react-router-dom";
 
 function PaymentPages() {

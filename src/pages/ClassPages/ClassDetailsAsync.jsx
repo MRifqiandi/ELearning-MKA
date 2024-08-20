@@ -1,10 +1,10 @@
 import React from "react";
-import PaginationCda from "../components/PaginationCda";
-import ButtonBuyClass from "../components/ButtonBuyClass";
-import DiscountPrice from "../components/DiscountPrice";
-import CoursesPaginationDesktop from "../components/CoursesPaginationDesktop";
-import DropdownCda from "../components/DropdownCda";
-import Aside from "../components/Aside";
+import PaginationCda from "../../components/Tabs/TabsCda";
+import ButtonBuyClass from "../../components/Button/ButtonBuyClass";
+import DiscountPrice from "../../components/DiscountPrice";
+import CoursesPaginationDesktop from "../../components/Tabs/CoursesPaginationDesktop";
+import DropdownCda from "../../components/Dropdown/DropdownCda";
+import Aside from "../../components/Aside";
 
 function ClassDetailsAsync() {
   return (
@@ -60,7 +60,7 @@ function ClassDetailsAsync() {
                 </div>
               </div>
             </div>
-            <div className="hidden lg:flex lg:w-5/12 pt-5">
+            <div className="hidden lg:flex lg:w-11/12 pt-5">
               <CoursesPaginationDesktop />
             </div>
           </div>
@@ -147,7 +147,7 @@ function ClassDetailsAsync() {
               </div>
             </div>
           </div>
-          <div className="pt-5 flex lg:hidden">
+          <div className="pt-5 flex md:hidden">
             <PaginationCda />
           </div>
         </div>

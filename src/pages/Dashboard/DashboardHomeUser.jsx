@@ -1,12 +1,12 @@
 import Aside from "/src/components/Aside";
-import SearchInput from "/src/components/SearchInput";
-import PageHomeComp from "../components/PageHomeComp";
-import CardCompleteCourse from "../components/CardCompleteCourse";
-import SearchFuncMobile from "../components/SearchFuncMobile";
-import Instructor from "../components/Instructor";
+import SearchInput from "/src/components/SearchComp/SearchInput";
+import PageHomeComp from "../../components/Tabs/PageHomeComp";
+import CardCompleteCourse from "../../components/Card/CardCompleteCourse";
+import SearchFuncMobile from "../../components/SearchComp/SearchFuncMobile";
+import Instructor from "../../components/Instructor";
 import { Link } from "react-router-dom";
-import CardCompAsync from "../components/CardCompAsync";
-import CardCompSync from "../components/CardCompSync";
+import CardCompAsync from "../../components/Card/CardCompAsync";
+import CardCompSync from "../../components/Card/CardCompSync";
 
 function DashboardHomeUser() {
   return (

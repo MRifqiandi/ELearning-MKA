@@ -1,24 +1,47 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "/src/Loader.css"; // Impor file CSS
 
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(""); // State untuk pesan sukses
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setError("");
+    setSuccess(""); // Reset pesan sukses
 
-    // Simulate an API call
-    setTimeout(() => {
+    // Fetch data from JSON file
+    try {
+      const response = await fetch("/data/Data.json");
+      const users = await response.json();
+
+      // Simulate authentication
+      const user = users.find(
+        (user) => user.email === email && user.password === password
+      );
+
+      if (user) {
+        setSuccess("Login berhasil!"); // Set pesan sukses
+        setIsLoading(false);
+        setFadeOut(true);
+        setTimeout(() => {
+          navigate(user.role === "admin" ? "/class" : "/");
+        }, 2000);
+      } else {
+        setError("Invalid email or password");
+        setIsLoading(false);
+      }
+    } catch (err) {
+      setError("An error occurred. Please try again.");
       setIsLoading(false);
-      setFadeOut(true);
-      setTimeout(() => {
-        navigate("/");
-      }, 1000); // Match this duration with the CSS transition duration
-    }, 2000);
+    }
   };
 
   return (
@@ -48,6 +71,8 @@ function Login() {
                 className="border-2 rounded-lg p-1"
                 placeholder="email"
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
@@ -62,10 +87,19 @@ function Login() {
                 className="border-2 rounded-lg p-1"
                 placeholder="password"
                 type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </div>
           </div>
+
+          {error && (
+            <div className="text-red-500 text-center mt-4">{error}</div>
+          )}
+          {success && (
+            <div className="text-green-500 text-center mt-4">{success}</div>
+          )}
 
           <div className="flex gap-1.5">
             <input type="checkbox" className="" />
@@ -96,14 +130,15 @@ function Login() {
             </button>
             <button className="flex items-center justify-center content-center border-solid border-2 border-slate-300 rounded-xl w-52 h-10 gap-3 font-be-vietnam-pro font-medium hover:bg-gray-100 cursor-pointer">
               <img src="./src/assets/apple.svg" />
-
               <label>Sign in with apple</label>
             </button>
           </div>
           <div className="flex items-center justify-center">
             <h1 className="font-medium font-be-vietnam-pro">
               Dont have an account?
-              <span className="text-title-login cursor-pointer"> Sign Up</span>
+              <Link to={"/registeruser"}>
+                <span className="text-title-login cursor-pointer">Sign Up</span>
+              </Link>
             </h1>
           </div>
         </form>

@@ -13,7 +13,7 @@ function PaymentConfirm() {
 
     // Set timeout to navigate to next page after countdown ends
     const timer = setTimeout(() => {
-      navigate("/registerclass"); // Replace with your desired route
+      navigate("/class"); // Replace with your desired route
     }, 4000); // 3 seconds delay
     return () => {
       clearInterval(interval);
