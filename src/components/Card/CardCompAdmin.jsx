@@ -1,23 +1,22 @@
-import { useEffect, useState } from "react";
-import { Card, Progress } from "flowbite-react";
-import ButtonComp from "../Button/ButtonComp";
+import { Card } from "flowbite-react";
+import { Button } from "flowbite-react";
 import { Link } from "react-router-dom";
 
-function CardCompSync() {
-  const [progress, setProgress] = useState(0);
+function CardCompAdmin() {
+  // const [progress, setProgress] = useState(0);
 
-  useEffect(() => {
-    const storedProgress = localStorage.getItem("reactClassProgress");
-    if (storedProgress) {
-      setProgress(parseFloat(storedProgress));
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedProgress = localStorage.getItem("reactClassProgress");
+  //   if (storedProgress) {
+  //     setProgress(parseFloat(storedProgress));
+  //   }
+  // }, []);
 
-  console.log("Current progress:", progress);
+  // console.log("Current progress:", progress);
 
   return (
     <Card className="w-auto md:max-w-sm rounded-xl drop-shadow-custom-card cursor-pointer transition-transform duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-300">
-      <Link to={"/lesson/1"}>
+      <Link to={"/dashboardsync"}>
         <img
           src="/src/assets/Intersect.svg"
           className="absolute object-cover top-7 left-16 -z-0 w-32 h-14 transform -translate-x-1/2 -translate-y-1/2"
@@ -31,9 +30,13 @@ function CardCompSync() {
               <p className="text-sm font-normal text-gray-700 dark:text-gray-400 font-be-vietnam-pro ">
                 11 Lessons
               </p>
-              <Progress size="md" progress={progress} color="blue" max={100} />
+              {/* <Progress size="md" progress={progress} color="blue" max={100} /> */}
             </div>
-            <ButtonComp />
+
+            <Button className="flex justify-center items-center bg-btn-card h-8 md:w-28 md:h-9">
+              <img src="/src/assets/edit.svg" />
+              Edit
+            </Button>
           </div>
           <img className="w-20 md:w-28" src="/src/assets/react.svg" />
           <img
@@ -46,4 +49,4 @@ function CardCompSync() {
   );
 }
 
-export default CardCompSync;
+export default CardCompAdmin;

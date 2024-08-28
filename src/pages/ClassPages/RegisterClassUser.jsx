@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function RegisterUser() {
@@ -6,13 +6,13 @@ function RegisterUser() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState(""); // State untuk pesan sukses
+  const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
     setError("");
-    setSuccess(""); // Reset pesan sukses
+    setSuccess("");
 
     // Validate input
     if (!name || !email || !password) {

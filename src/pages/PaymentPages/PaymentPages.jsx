@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { useEffect } from "react";
 import CoursesSide from "../../components/CoursesSide";
 import Payment from "../../components/Payment";
@@ -9,12 +9,10 @@ function PaymentPages() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Set delay in milliseconds (e.g., 3000ms = 3 seconds)
     const timer = setTimeout(() => {
-      navigate("/payconfirm"); // Replace with your desired route
-    }, 6000); // 6 seconds delay
+      navigate("/payconfirm");
+    }, 6000);
 
-    // Cleanup the timer if the component is unmounted
     return () => clearTimeout(timer);
   }, [navigate]);
   return (

@@ -18,6 +18,7 @@ export default {
         "btn-card": "#489CFF",
         "title-home": "#369fff",
         "card-ra": "#DBDBDB",
+        "card-task": "#6688cc",
       },
     },
   },

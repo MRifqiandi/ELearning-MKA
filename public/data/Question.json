@@ -1,47 +1,52 @@
 [
   {
     "question": "What is React?",
-    "options": [
-      "A. JavaScript library",
-      "B. CSS framework",
-      "C. database",
-      "D. programming language"
-    ]
+    "options": {
+      "A": "A library for JavaScript",
+      "B": "A framework",
+      "C": "A programming language",
+      "D": "A server-side platform"
+    },
+    "correctAnswer": "A"
   },
   {
     "question": "What is JSX?",
-    "options": [
-      "A. syntax extension",
-      "B. type of function",
-      "C. CSS framework",
-      "D. JavaScript compiler"
-    ]
+    "options": {
+      "A": "JavaScript XML",
+      "B": "JavaScript Extension",
+      "C": "JavaScript Framework",
+      "D": "JavaScript Execution"
+    },
+    "correctAnswer": "A"
   },
   {
-    "question": "What is a component in React?",
-    "options": [
-      "A. reusable piece of UI",
-      "B. type of database",
-      "C. JavaScript function",
-      "D. CSS rule"
-    ]
+    "question": "Which hook is used to handle state in a functional component?",
+    "options": {
+      "A": "useContext",
+      "B": "useState",
+      "C": "useEffect",
+      "D": "useReducer"
+    },
+    "correctAnswer": "B"
   },
   {
-    "question": "How do you create a state in React?",
-    "options": [
-      "A. useState()",
-      "B. createState()",
-      "C. setState()",
-      "D. new State()"
-    ]
+    "question": "What is the purpose of useEffect in React?",
+    "options": {
+      "A": "To handle state in components",
+      "B": "To perform side effects in components",
+      "C": "To return JSX",
+      "D": "To manage component props"
+    },
+    "correctAnswer": "B"
   },
   {
-    "question": "What is a hook in React?",
-    "options": [
-      "A. function that lets you use state",
-      "B. type of component",
-      "C. CSS selector",
-      "D. method to create components"
-    ]
+    "question": "Which of the following is used to pass data to a child component?",
+    "options": {
+      "A": "State",
+      "B": "Props",
+      "C": "Context",
+      "D": "Refs"
+    },
+    "correctAnswer": "B"
   }
 ]

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Avatar } from "flowbite-react";
 
-function Aside() {
+function AsideAdmin() {
   const [user, setUser] = useState(null);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -213,4 +213,4 @@ function Aside() {
   );
 }
 
-export default Aside;
+export default AsideAdmin;

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Aside from "/src/components/Aside";
 import SearchInput from "/src/components/SearchComp/SearchInput";
 import PageHomeComp from "../../components/Tabs/PageHomeComp";
@@ -9,6 +10,16 @@ import CardCompAsync from "../../components/Card/CardCompAsync";
 import CardCompSync from "../../components/Card/CardCompSync";
 
 function DashboardHomeUser() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem("user"));
+    setUser(userData);
+  }, []);
+
+  if (!user) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className="h-screen flex flex-col md:flex-row">
       <Aside className="bg-gray-100 md:w-1/4 md:h-full" />
@@ -23,7 +34,7 @@ function DashboardHomeUser() {
 
         <div className="flex font-be-vietnam-pro text-title-home text-xl p-4 md:justify-start md:items-start md:pl-72">
           <h1>
-            Hello <span className="font-bold">Andi,</span> Welcome back
+            Hello <span className="font-bold">{user.name},</span> Welcome back
           </h1>
         </div>
 

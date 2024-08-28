@@ -16,6 +16,13 @@ import LessonPageAsync from "./pages/ClassPages/LessonPageAsync";
 import CertificatePage from "./pages/Dashboard/CertificatePage";
 import SearchingPage from "./pages/Dashboard/SearchingPage";
 import QuestionPage from "./pages/ClassPages/QuestionPage";
+import SettingPage from "./pages/Dashboard/SettingPage";
+import DashboardAdmin from "./pages/Dashboard/DashboardAdmin";
+import AllClassesAdmin from "./pages/Dashboard/AllClassesAdmin";
+import ClassDetailSync from "./pages/ClassPages/ClassDetailSync";
+import FeedbackToMentor from "./pages/Dashboard/FeedbackToMentor";
+import TaskUploader from "./pages/ClassPages/TaskUploader";
+// import WeekDetailSync from "./pages/ClassPages/WeekDetailSync";
 
 function App() {
   return (
@@ -31,11 +38,18 @@ function App() {
         <Route path="/pay" element={<PaymentPages />} />
         <Route path="/payconfirm" element={<PaymentConfirm />} />
         <Route path="/registerclass" element={<RegisterClassUser />} />
-        <Route path="/class" element={<ClassAsynchronous />} />
+        <Route path="/classasync" element={<ClassAsynchronous />} />
         <Route path="/lessonAsync/:id" element={<LessonPageAsync />} />
         <Route path="/sertifikatpage" element={<CertificatePage />} />
         <Route path="/searchpage" element={<SearchingPage />} />
         <Route path="/question" element={<QuestionPage />} />
+        <Route path="/setting" element={<SettingPage />} />
+        <Route path="/dashboardadmin" element={<DashboardAdmin />} />
+        <Route path="/allclasses" element={<AllClassesAdmin />} />
+        <Route path="/cds" element={<ClassDetailSync />} />
+        <Route path="/feedbackmentor" element={<FeedbackToMentor />} />
+        <Route path="/taskuploader" element={<TaskUploader />} />
+        {/* <Route path="/wds" element={<WeekDetailSync />} /> */}
       </Routes>
     </Router>
   );

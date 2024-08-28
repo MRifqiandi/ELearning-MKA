@@ -1,16 +1,18 @@
 [
   {
     "id": 1,
-    "name": "John Doe",
+    "name": "Muhammad Rifqiandi",
     "email": "user@example.com",
-    "password": "password123",
-    "role": "user"
+    "password": "12345678",
+    "role": "user",
+    "img": "/src/assets/instructor.jpg"
   },
   {
     "id": 2,
     "name": "Jane Admin",
     "email": "admin@example.com",
     "password": "adminpassword123",
-    "role": "admin"
+    "role": "admin",
+    "img": "/src/assets/GOPAY.svg"
   }
 ]
