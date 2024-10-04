@@ -22,6 +22,17 @@ import AllClassesAdmin from "./pages/Dashboard/AllClassesAdmin";
 import ClassDetailSync from "./pages/ClassPages/ClassDetailSync";
 import FeedbackToMentor from "./pages/Dashboard/FeedbackToMentor";
 import TaskUploader from "./pages/ClassPages/TaskUploader";
+import ListUsers from "./pages/Dashboard/ListUsers";
+import EditLessonsDetail from "./pages/Dashboard/EditLessonsDetail";
+import AddClasses from "./pages/Dashboard/AddClasses";
+import FeedbackMentor from "./pages/Dashboard/DashboardFeedbackMentor";
+import ListTaskUsers from "./pages/Dashboard/ListTaskUsers";
+import AddMeetingClasses from "./pages/Dashboard/AddMeetingClass";
+import DashboardUsersAttendance from "./pages/Dashboard/DashboardUsersAttendance";
+import AddEditQuestion from "./pages/Dashboard/AddEditQuestion";
+import UserTasks from "./pages/Dashboard/UserTasks";
+import AddTask from "./pages/Dashboard/AddTask";
+import AddModuleAndMateri from "./pages/Dashboard/AddModulAndMateri";
 // import WeekDetailSync from "./pages/ClassPages/WeekDetailSync";
 
 function App() {
@@ -47,9 +58,19 @@ function App() {
         <Route path="/dashboardadmin" element={<DashboardAdmin />} />
         <Route path="/allclasses" element={<AllClassesAdmin />} />
         <Route path="/cds" element={<ClassDetailSync />} />
-        <Route path="/feedbackmentor" element={<FeedbackToMentor />} />
+        <Route path="/feedbacktomentor" element={<FeedbackToMentor />} />
         <Route path="/taskuploader" element={<TaskUploader />} />
-        {/* <Route path="/wds" element={<WeekDetailSync />} /> */}
+        <Route path="/listusers" element={<ListUsers />} />
+        <Route path="/eld" element={<EditLessonsDetail />} />
+        <Route path="/addclass" element={<AddClasses />} />
+        <Route path="/feedbackmentor" element={<FeedbackMentor />} />
+        <Route path="/listtask" element={<ListTaskUsers />} />
+        <Route path="/addmeetingclass" element={<AddMeetingClasses />} />
+        <Route path="/usersattendance" element={<DashboardUsersAttendance />} />
+        <Route path="/addquestion" element={<AddEditQuestion />} />
+        <Route path="/usertasks" element={<UserTasks />} />
+        <Route path="/addtask" element={<AddTask />} />
+        <Route path="/addmodul" element={<AddModuleAndMateri />} />
       </Routes>
     </Router>
   );

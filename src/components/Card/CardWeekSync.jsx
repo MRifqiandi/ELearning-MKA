@@ -1,6 +1,6 @@
 import { Card } from "flowbite-react";
 import { useState } from "react";
-import MeetDetailSync from "./MeetDetailSync";
+import MeetDetailSync from "../Card/MeetDetailSync";
 
 function CardWeekSync() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -16,46 +16,54 @@ function CardWeekSync() {
   return (
     <div>
       <Card
-        className="w-full md:max-w-sm rounded-xl shadow-lg border-gray-300 cursor-pointer transition-transform duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-300"
+        className="relative w-full md:max-w-sm bg-white border border-gray-200 rounded-xl shadow-md cursor-pointer transition-transform duration-300 transform hover:scale-105 hover:shadow-lg hover:border-gray-400"
         onClick={handleCardClick}
         style={{ zIndex: isPopupOpen ? 0 : 1 }}
       >
         <div className="relative">
+          {/* Background Decorative SVG */}
           <img
             src="/src/assets/Intersect.svg"
-            className="absolute object-cover top-7 left-16 -z-0 w-32 h-14 transform -translate-x-1/2 -translate-y-1/2"
+            className="absolute object-cover top-0 left-1/2 w-40 h-16 opacity-10 transform -translate-x-1/2"
+            alt="Top Decoration"
           />
-          <div className="flex flex-col gap-14 md:gap-20">
-            <div className="flex flex-col gap-3">
-              <h5 className="text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white font-be-vietnam-pro">
+          <div className="flex flex-col gap-6 z-10">
+            {/* Card Header */}
+            <div className="flex flex-col gap-2">
+              <h5 className="text-2xl font-bold tracking-tight text-gray-800">
                 Pertemuan 1
               </h5>
-              <div className="w-full h-[1px] bg-black"></div>
-              <h5 className="text-lg tracking-tight text-gray-900 dark:text-white font-be-vietnam-pro">
+              <div className="w-full h-[1px] bg-gray-300"></div>
+              <h6 className="text-lg font-medium tracking-tight text-gray-600">
                 Variabel
-              </h5>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor
-              </p>
+              </h6>
             </div>
 
-            <img
-              className="absolute object-cover bottom-14 right-20 -z-0 w-40 h-28 transform translate-x-1/2 translate-y-1/2"
-              src="/src/assets/Intersect-bottom-right.svg"
-            />
+            {/* Description */}
+            <p className="text-sm text-gray-500">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
           </div>
+
+          {/* Bottom Decorative SVG */}
+          <img
+            className="absolute bottom-0 right-0 w-32 h-20 opacity-20"
+            src="/src/assets/Intersect-bottom-right.svg"
+            alt="Bottom Decoration"
+          />
         </div>
       </Card>
 
       {isPopupOpen && (
         <div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-5"
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-6 transition-opacity duration-300 ease-in-out"
           style={{ zIndex: 9999 }}
         >
-          <div className="relative rounded-lg shadow-lg max-w-xl w-full">
+          <div className="relative  p-6 rounded-lg shadow-lg max-w-xl w-full">
+            {/* Close Button */}
             <button
-              className="absolute top-2 right-2 text-2xl text-red-500"
+              className="absolute  text-3xl text-red-500 hover:text-gray-700"
               onClick={handleClosePopup}
             >
               ✖

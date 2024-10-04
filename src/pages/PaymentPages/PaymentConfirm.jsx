@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function PaymentConfirm() {
@@ -13,7 +13,7 @@ function PaymentConfirm() {
 
     // Set timeout to navigate to next page after countdown ends
     const timer = setTimeout(() => {
-      navigate("/class");
+      navigate("/registerclass");
     }, 4000);
     return () => {
       clearInterval(interval);

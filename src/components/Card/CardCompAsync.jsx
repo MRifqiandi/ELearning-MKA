@@ -16,7 +16,7 @@ function CardCompAsync() {
 
   return (
     <Card className="w-auto md:max-w-sm rounded-xl drop-shadow-custom-card cursor-pointer transition-transform duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-300">
-      <Link to={""}>
+      <Link to="/cda">
         <img
           src="/src/assets/Intersect.svg"
           className="absolute object-cover top-7 left-16 -z-0 w-32 h-14 transform -translate-x-1/2 -translate-y-1/2"

@@ -1,9 +1,9 @@
 import Aside from "/src/components/Aside";
 import SearchInput from "/src/components/SearchComp/SearchInput";
-import CardCompleteCourse from "../../components/Card/CardCompleteCourse";
 import SearchFuncMobile from "../../components/SearchComp/SearchFuncMobile";
 import Instructor from "../../components/Instructor";
 import CardCompAdmin from "../../components/Card/CardCompAdmin";
+import { Link } from "react-router-dom";
 
 function AllClassesAdmin() {
   return (
@@ -40,23 +40,25 @@ function AllClassesAdmin() {
               </div>
             </div>
             <div className="flex justify-end pt-5 pr-11">
-              <button className="flex items-center font-semibold text-white bg-title-home w-32 justify-center rounded-lg p-1 hover:opacity-80">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="30px"
-                  height="30px"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeWidth={1.5}
-                    d="M12 17V7m-5 5h10"
-                  ></path>
-                </svg>
-                Class
-              </button>
+              <Link to="/addclass">
+                <button className="flex items-center font-semibold text-white bg-title-home w-32 justify-center rounded-lg p-1 hover:opacity-80">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30px"
+                    height="30px"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeWidth={1.5}
+                      d="M12 17V7m-5 5h10"
+                    ></path>
+                  </svg>
+                  Class
+                </button>
+              </Link>
             </div>
             <div className="flex flex-wrap  justify-center items-center gap-4 p-4 ">
               <CardCompAdmin className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />

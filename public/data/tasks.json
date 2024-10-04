@@ -1,0 +1,192 @@
+[
+  {
+    "Id": 1,
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Tugas 1: Mengatur Kelas",
+        "description": "Mengatur jadwal kelas untuk bulan depan.",
+        "due_date": "2024-10-05",
+        "status": "Completed"
+      },
+      {
+        "id": 2,
+        "title": "Tugas 2: Membuat Materi Ajar",
+        "description": "Membuat materi ajar untuk topik React.",
+        "due_date": "2024-10-12",
+        "status": "In Progress"
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Tugas 1: Mengikuti Pelatihan",
+        "description": "Mengikuti pelatihan online tentang manajemen waktu.",
+        "due_date": "2024-10-03",
+        "status": "In Progress"
+      },
+      {
+        "id": 2,
+        "title": "Tugas 2: Review Buku",
+        "description": "Melakukan review untuk buku yang telah dibaca.",
+        "due_date": "2024-10-10",
+        "status": "Pending"
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Tugas 1: Merencanakan Kegiatan",
+        "description": "Merencanakan kegiatan belajar untuk bulan ini.",
+        "due_date": "2024-10-01",
+        "status": "Completed"
+      },
+      {
+        "id": 2,
+        "title": "Tugas 2: Diskusi dengan Siswa",
+        "description": "Melakukan diskusi dengan siswa tentang materi pelajaran.",
+        "due_date": "2024-10-07",
+        "status": "In Progress"
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Tugas 1: Menyusun Rencana Ajar",
+        "description": "Menyusun rencana ajar untuk semester depan.",
+        "due_date": "2024-10-15",
+        "status": "Pending"
+      },
+      {
+        "id": 2,
+        "title": "Tugas 2: Mengembangkan Modul",
+        "description": "Mengembangkan modul untuk kelas online.",
+        "due_date": "2024-10-20",
+        "status": "Pending"
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Tugas 1: Tugas Harian",
+        "description": "Menyelesaikan tugas harian yang diberikan.",
+        "due_date": "2024-10-05",
+        "status": "In Progress"
+      },
+      {
+        "id": 2,
+        "title": "Tugas 2: Ujian Tengah Semester",
+        "description": "Mempersiapkan ujian tengah semester.",
+        "due_date": "2024-10-12",
+        "status": "Pending"
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Tugas 1: Membuat Konten",
+        "description": "Membuat konten pembelajaran untuk minggu ini.",
+        "due_date": "2024-10-03",
+        "status": "Completed"
+      },
+      {
+        "id": 2,
+        "title": "Tugas 2: Feedback Siswa",
+        "description": "Memberikan feedback kepada siswa setelah ujian.",
+        "due_date": "2024-10-10",
+        "status": "In Progress"
+      }
+    ]
+  },
+  {
+    "Id": 7,
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Tugas 1: Latihan Soal",
+        "description": "Mengerjakan latihan soal untuk persiapan ujian.",
+        "due_date": "2024-10-07",
+        "status": "Pending"
+      },
+      {
+        "id": 2,
+        "title": "Tugas 2: Diskusi Kelompok",
+        "description": "Melakukan diskusi kelompok tentang proyek.",
+        "due_date": "2024-10-12",
+        "status": "Pending"
+      }
+    ]
+  },
+  {
+    "Id": 8,
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Tugas 1: Presentasi",
+        "description": "Menyiapkan presentasi untuk kelas.",
+        "due_date": "2024-10-05",
+        "status": "In Progress"
+      },
+      {
+        "id": 2,
+        "title": "Tugas 2: Membuat Laporan",
+        "description": "Membuat laporan tentang hasil belajar.",
+        "due_date": "2024-10-15",
+        "status": "Pending"
+      }
+    ]
+  },
+  {
+    "Id": 9,
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Tugas 1: Ujian Akhir",
+        "description": "Mempersiapkan ujian akhir semester.",
+        "due_date": "2024-10-10",
+        "status": "Pending"
+      },
+      {
+        "id": 2,
+        "title": "Tugas 2: Review Materi",
+        "description": "Melakukan review materi pelajaran untuk ujian.",
+        "due_date": "2024-10-15",
+        "status": "In Progress"
+      }
+    ]
+  },
+  {
+    "Id": 10,
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Tugas 1: Proyek Akhir",
+        "description": "Mengerjakan proyek akhir yang telah ditentukan.",
+        "due_date": "2024-10-20",
+        "status": "Pending"
+      },
+      {
+        "id": 2,
+        "title": "Tugas 2: Mempersiapkan Presentasi",
+        "description": "Mempersiapkan presentasi untuk proyek akhir.",
+        "due_date": "2024-10-25",
+        "status": "Pending"
+      }
+    ]
+  }
+]

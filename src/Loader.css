@@ -24,3 +24,32 @@
 .custom-dropdown {
   background: #d1d5db;
 }
+
+.editor-preview {
+  max-width: 100%; /* Batasi lebar pratinjau */
+  overflow-wrap: break-word; /* Memastikan kata-kata panjang terpotong di baris baru */
+  word-wrap: break-word; /* Alternatif untuk overflow-wrap, untuk kompatibilitas */
+  white-space: normal; /* Pastikan tidak ada white-space yang membuat teks tidak ter-wrap */
+}
+
+.preview-content img {
+  max-width: 100%; /* Batasi lebar gambar agar tidak melebihi kontainer */
+  height: auto; /* Sesuaikan tinggi gambar proporsional dengan lebar */
+}
+
+.preview-content {
+  max-width: 100%; /* Pastikan konten tidak melebihi lebar kontainer */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+  display: block; /* Pastikan konten pratinjau sebagai blok, tidak inline */
+}
+/* backgroundParticles.css */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}

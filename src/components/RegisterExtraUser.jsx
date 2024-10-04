@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Label, TextInput } from "flowbite-react";
 import LocationDropdowns from "./Dropdown/LocationDropdowns";
 import DropdownJenjang from "./Dropdown/DropdownJenjang";
@@ -20,7 +20,7 @@ function RegisterExtraUser() {
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
-        navigate("/class");
+        navigate("/classasync");
       }, 2000);
     } else {
       alert("Please fill out all fields.");

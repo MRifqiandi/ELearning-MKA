@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "comment": "This is a great post!",
+    "date": "2024-08-29",
+    "avatar": "/src/assets/instructor.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "comment": "I found this article very helpful, thanks!",
+    "date": "2024-08-28",
+    "avatar": "/src/assets/instructor.jpg"
+  }
+]

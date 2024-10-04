@@ -8,6 +8,7 @@ import Instructor from "../../components/Instructor";
 import { Link } from "react-router-dom";
 import CardCompAsync from "../../components/Card/CardCompAsync";
 import CardCompSync from "../../components/Card/CardCompSync";
+import DropdownCda from "../../components/Dropdown/DropdownCda";
 
 function DashboardHomeUser() {
   const [user, setUser] = useState(null);
@@ -123,6 +124,9 @@ function DashboardHomeUser() {
           </div>
           <div className="pt-10">
             <Instructor />
+          </div>
+          <div>
+            <DropdownCda />
           </div>
         </div>
       </div>

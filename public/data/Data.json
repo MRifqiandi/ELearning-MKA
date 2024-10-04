@@ -1,18 +1,94 @@
 [
   {
     "id": 1,
-    "name": "Muhammad Rifqiandi",
-    "email": "user@example.com",
-    "password": "12345678",
-    "role": "user",
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "date": "2024-08-01",
+    "status": "Active",
+    "password": "password123",
+    "role": "admin",
     "img": "/src/assets/instructor.jpg"
   },
   {
     "id": 2,
-    "name": "Jane Admin",
-    "email": "admin@example.com",
-    "password": "adminpassword123",
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "date": "2024-08-02",
+    "status": "Inactive",
+    "password": "password123",
+    "role": "user"
+  },
+  {
+    "id": 3,
+    "name": "Emily Johnson",
+    "email": "emily.johnson@example.com",
+    "date": "2024-08-03",
+    "status": "Active",
+    "password": "password123",
+    "role": "mentor"
+  },
+  {
+    "id": 4,
+    "name": "Michael Brown",
+    "email": "michael.brown@example.com",
+    "date": "2024-08-04",
+    "status": "Inactive",
+    "password": "password123",
     "role": "admin",
-    "img": "/src/assets/GOPAY.svg"
+    "img": "/src/assets/gopay.svg"
+  },
+  {
+    "id": 5,
+    "name": "Sarah Davis",
+    "email": "sarah.davis@example.com",
+    "date": "2024-08-05",
+    "status": "Active",
+    "password": "password123",
+    "role": "user"
+  },
+  {
+    "id": 6,
+    "name": "David Wilson",
+    "email": "david.wilson@example.com",
+    "date": "2024-08-06",
+    "status": "Active",
+    "password": "password123",
+    "role": "mentor"
+  },
+  {
+    "id": 7,
+    "name": "Laura Martinez",
+    "email": "laura.martinez@example.com",
+    "date": "2024-08-07",
+    "status": "Inactive",
+    "password": "password123",
+    "role": "user"
+  },
+  {
+    "id": 8,
+    "name": "James Taylor",
+    "email": "james.taylor@example.com",
+    "date": "2024-08-08",
+    "status": "Active",
+    "password": "password123",
+    "role": "admin"
+  },
+  {
+    "id": 9,
+    "name": "Olivia Anderson",
+    "email": "olivia.anderson@example.com",
+    "date": "2024-08-09",
+    "status": "Inactive",
+    "password": "password123",
+    "role": "mentor"
+  },
+  {
+    "id": 10,
+    "name": "Daniel Thomas",
+    "email": "daniel.thomas@example.com",
+    "date": "2024-08-10",
+    "status": "Active",
+    "password": "password123",
+    "role": "user"
   }
 ]

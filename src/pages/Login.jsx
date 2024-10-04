@@ -1,5 +1,8 @@
+// import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 // import { useState } from "react";
 // import { Link, useNavigate } from "react-router-dom";
+// import { Label, TextInput } from "flowbite-react";
+// import { HiMail } from "react-icons/hi";
 // import "/src/Loader.css"; // Impor file CSS
 
 // function Login() {
@@ -9,7 +12,6 @@
 //   const [fadeOut, setFadeOut] = useState(false);
 //   const [error, setError] = useState("");
 //   const [success, setSuccess] = useState("");
-//   const [user, setUser] = useState(null); // State untuk pesan sukses
 //   const navigate = useNavigate();
 
 //   const handleLogin = async (e) => {
@@ -31,8 +33,16 @@
 //         setSuccess("Login berhasil!"); // Set pesan sukses
 //         setIsLoading(false);
 //         setFadeOut(true);
+//         localStorage.setItem("user", JSON.stringify(user)); // Simpan data pengguna
 //         setTimeout(() => {
-//           navigate(user.role === "admin" ? "/dashboardadmin" : "/");
+//           // Arahkan ke halaman sesuai role
+//           if (user.role === "admin") {
+//             navigate("/dashboardadmin");
+//           } else if (user.role === "mentor") {
+//             navigate("/dashboardadmin");
+//           } else {
+//             navigate("/");
+//           }
 //         }, 2000);
 //       } else {
 //         setError("Invalid email or password");
@@ -65,26 +75,32 @@
 //           onSubmit={handleLogin}
 //         >
 //           <div className="flex flex-col gap-6">
-//             <div className="flex flex-col">
-//               <label className="font-medium">Email address</label>
-//               <input
-//                 className="border-2 rounded-lg p-1"
+//             <div className="max-w-lg">
+//               <div className="mb-2 block">
+//                 <Label htmlFor="email4" value="Your email" />
+//               </div>
+//               <TextInput
+//                 className=" rounded-lg p-1"
 //                 placeholder="email"
 //                 type="email"
 //                 value={email}
 //                 onChange={(e) => setEmail(e.target.value)}
 //                 required
+//                 id="email4"
+//                 icon={HiMail}
+//                 rightIcon={HiMail}
 //               />
 //             </div>
-//             <div className="flex flex-col">
+
+//             <div className="max-w-lg">
 //               <div className="flex justify-between">
-//                 <label className="font-medium">Password</label>
+//                 <Label className="font-medium">Password</Label>
 //                 <a className="text-xs text-blue-700 cursor-pointer hover:text-blue-950">
 //                   Forgot Password?
 //                 </a>
 //               </div>
-//               <input
-//                 className="border-2 rounded-lg p-1"
+//               <TextInput
+//                 className=" rounded-lg p-1"
 //                 placeholder="password"
 //                 type="password"
 //                 value={password}
@@ -110,7 +126,7 @@
 //           <div className="flex items-center justify-center pt-3">
 //             <button
 //               type="submit"
-//               className="w-96 h-9 bg-submit-login rounded-lg text-white font-be-vietnam-pro font-bold hover:bg-opacity-90 flex items-center justify-center"
+//               className="w-96 h-9 bg-title-login rounded-lg text-white font-be-vietnam-pro font-bold hover:bg-opacity-90 flex items-center justify-center"
 //               disabled={isLoading}
 //             >
 //               {isLoading ? <div className="loader" /> : "Login"}
@@ -157,9 +173,13 @@
 
 // export default Login;
 
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { Label, TextInput } from "flowbite-react";
+import { HiMail } from "react-icons/hi";
 import "/src/Loader.css"; // Impor file CSS
+import { auth } from "../firebase"; // Impor objek auth dari file Firebase yang telah kamu buat
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -169,12 +189,13 @@ function Login() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
+  const provider = new GoogleAuthProvider();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setError("");
-    setSuccess(""); // Reset pesan sukses
+    setSuccess("");
 
     // Fetch data from JSON file
     try {
@@ -186,12 +207,18 @@ function Login() {
       );
 
       if (user) {
-        setSuccess("Login berhasil!"); // Set pesan sukses
+        setSuccess("Login berhasil!");
         setIsLoading(false);
         setFadeOut(true);
-        localStorage.setItem("user", JSON.stringify(user)); // Simpan data pengguna
+        localStorage.setItem("user", JSON.stringify(user));
         setTimeout(() => {
-          navigate(user.role === "admin" ? "/dashboardadmin" : "/"); // Arahkan ke halaman profil
+          if (user.role === "admin") {
+            navigate("/dashboardadmin");
+          } else if (user.role === "mentor") {
+            navigate("/dashboardadmin");
+          } else {
+            navigate("/");
+          }
         }, 2000);
       } else {
         setError("Invalid email or password");
@@ -199,6 +226,30 @@ function Login() {
       }
     } catch (err) {
       setError("An error occurred. Please try again.");
+      setIsLoading(false);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    setIsLoading(true);
+    setError("");
+    setSuccess("");
+
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+
+      // Simpan data pengguna ke localStorage atau ke state sesuai kebutuhan
+      localStorage.setItem("user", JSON.stringify(user));
+      setSuccess("Login berhasil!");
+      setFadeOut(true);
+
+      // Arahkan ke halaman sesuai role
+      setTimeout(() => {
+        navigate("/dashboardadmin");
+      }, 2000);
+    } catch (error) {
+      setError("Login dengan Google gagal. Silakan coba lagi.");
       setIsLoading(false);
     }
   };
@@ -224,26 +275,32 @@ function Login() {
           onSubmit={handleLogin}
         >
           <div className="flex flex-col gap-6">
-            <div className="flex flex-col">
-              <label className="font-medium">Email address</label>
-              <input
-                className="border-2 rounded-lg p-1"
+            <div className="max-w-lg">
+              <div className="mb-2 block">
+                <Label htmlFor="email4" value="Your email" />
+              </div>
+              <TextInput
+                className="rounded-lg p-1"
                 placeholder="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                id="email4"
+                icon={HiMail}
+                rightIcon={HiMail}
               />
             </div>
-            <div className="flex flex-col">
+
+            <div className="max-w-lg">
               <div className="flex justify-between">
-                <label className="font-medium">Password</label>
+                <Label className="font-medium">Password</Label>
                 <a className="text-xs text-blue-700 cursor-pointer hover:text-blue-950">
                   Forgot Password?
                 </a>
               </div>
-              <input
-                className="border-2 rounded-lg p-1"
+              <TextInput
+                className="rounded-lg p-1"
                 placeholder="password"
                 type="password"
                 value={password}
@@ -269,7 +326,7 @@ function Login() {
           <div className="flex items-center justify-center pt-3">
             <button
               type="submit"
-              className="w-96 h-9 bg-submit-login rounded-lg text-white font-be-vietnam-pro font-bold hover:bg-opacity-90 flex items-center justify-center"
+              className="w-96 h-9 bg-title-login rounded-lg text-white font-be-vietnam-pro font-bold hover:bg-opacity-90 flex items-center justify-center"
               disabled={isLoading}
             >
               {isLoading ? <div className="loader" /> : "Login"}
@@ -283,18 +340,21 @@ function Login() {
             </div>
           </div>
           <div className="flex flex-col gap-6 items-center justify-center lg:flex-row">
-            <button className="flex items-center justify-center content-center border-solid border-2 border-slate-300 rounded-xl w-52 h-10 gap-3 font-be-vietnam-pro font-medium hover:bg-gray-100 cursor-pointer">
-              <img src="./src/assets/google.svg" />
-              <label>Sign in with google</label>
+            <button
+              className="flex items-center justify-center content-center border-solid border-2 border-slate-300 rounded-xl w-52 h-10 gap-3 font-be-vietnam-pro font-medium hover:bg-gray-100 cursor-pointer"
+              onClick={handleGoogleLogin}
+            >
+              <img src="./src/assets/google.svg" alt="Google Logo" />
+              <label>Sign in with Google</label>
             </button>
             <button className="flex items-center justify-center content-center border-solid border-2 border-slate-300 rounded-xl w-52 h-10 gap-3 font-be-vietnam-pro font-medium hover:bg-gray-100 cursor-pointer">
-              <img src="./src/assets/apple.svg" />
-              <label>Sign in with apple</label>
+              <img src="./src/assets/apple.svg" alt="Apple Logo" />
+              <label>Sign in with Apple</label>
             </button>
           </div>
           <div className="flex items-center justify-center">
             <h1 className="font-medium font-be-vietnam-pro">
-              Dont have an account?
+              Don't have an account?
               <Link to={"/registeruser"}>
                 <span className="text-title-login cursor-pointer">Sign Up</span>
               </Link>

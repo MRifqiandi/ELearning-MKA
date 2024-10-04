@@ -32,11 +32,12 @@ function CardCompAdmin() {
               </p>
               {/* <Progress size="md" progress={progress} color="blue" max={100} /> */}
             </div>
-
-            <Button className="flex justify-center items-center bg-btn-card h-8 md:w-28 md:h-9">
-              <img src="/src/assets/edit.svg" />
-              Edit
-            </Button>
+            <Link to="/eld">
+              <Button className="flex justify-center items-center bg-btn-card h-8 md:w-28 md:h-9">
+                <img src="/src/assets/edit.svg" />
+                Edit
+              </Button>
+            </Link>
           </div>
           <img className="w-20 md:w-28" src="/src/assets/react.svg" />
           <img

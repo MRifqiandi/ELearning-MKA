@@ -115,7 +115,7 @@ function RegisterUser() {
           <div className="flex items-center justify-center pt-3">
             <button
               type="submit"
-              className="w-96 h-9 bg-submit-login rounded-lg text-white font-be-vietnam-pro font-bold hover:bg-opacity-90"
+              className="w-96 h-9 bg-title-login rounded-lg text-white font-be-vietnam-pro font-bold hover:bg-opacity-90"
             >
               Sign up
             </button>

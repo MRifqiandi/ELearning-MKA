@@ -3,11 +3,13 @@ import { Button } from "flowbite-react";
 import Aside from "../../components/Aside";
 import { useNavigate } from "react-router-dom";
 
+
 const QuestionPage = () => {
   const [questionsData, setQuestionsData] = useState([]);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [score, setScore] = useState(null);
   const [showScore, setShowScore] = useState(false);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [timeLeft, setTimeLeft] = useState(5);
   const navigate = useNavigate();
 
@@ -26,10 +28,18 @@ const QuestionPage = () => {
     fetchQuestions();
   }, []);
 
-  const handleButtonClick = (questionIndex, optionKey) => {
+  const handleButtonClick = (optionKey) => {
     const newSelectedOptions = [...selectedOptions];
-    newSelectedOptions[questionIndex] = optionKey;
+    newSelectedOptions[currentQuestionIndex] = optionKey;
     setSelectedOptions(newSelectedOptions);
+  };
+
+  const handleNextQuestion = () => {
+    if (currentQuestionIndex < questionsData.length - 1) {
+      setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+    } else {
+      handleFinish(); // Jika sudah pada soal terakhir, hitung skor
+    }
   };
 
   const handleFinish = () => {
@@ -47,7 +57,7 @@ const QuestionPage = () => {
     }, 1000);
 
     const timer = setTimeout(() => {
-      navigate("/classasync");
+      navigate("/sertifikatpage");
     }, 5000);
     return () => {
       clearInterval(intervalTime);
@@ -62,28 +72,38 @@ const QuestionPage = () => {
       </div>
       <div className="flex flex-col justify-center p-2 md:pl-72 pt-10">
         <div className="p-3 shadow-xl rounded-lg">
-          <h2 className="pb-6 text-3xl font-semibold text-blue-500">Latihan</h2>
+          <h2 className="pb-6 text-3xl font-semibold text-btn-card">Latihan</h2>
           {questionsData.length === 0 ? (
             <p>Loading questions...</p>
           ) : (
-            questionsData.map((q, index) => (
-              <div key={index} className="mb-6">
-                <h3 className="mb-4 font-semibold text-gray-900">
-                  {index + 1}. {q.question}
-                </h3>
-                <div className="flex flex-col space-y-2">
-                  {Object.entries(q.options).map(([key, value]) => (
-                    <Button
-                      key={key}
-                      color={selectedOptions[index] === key ? "info" : "gray"}
-                      onClick={() => handleButtonClick(index, key)}
-                    >
-                      {key}. {value}
-                    </Button>
-                  ))}
-                </div>
+            <div className="mb-6">
+              <h3 className="mb-4 font-semibold text-gray-900">
+                {currentQuestionIndex + 1}.{" "}
+                {questionsData[currentQuestionIndex].question}
+              </h3>
+              <div className="flex flex-col space-y-2">
+                {Object.entries(
+                  questionsData[currentQuestionIndex].options
+                ).map(([key, value]) => (
+                  <Button
+                    key={key}
+                    color={
+                      selectedOptions[currentQuestionIndex] === key
+                        ? "info"
+                        : "gray"
+                    }
+                    onClick={() => handleButtonClick(key)}
+                    className={`transition duration-300 ${
+                      selectedOptions[currentQuestionIndex] === key
+                        ? "bg-blue-500 text-white"
+                        : ""
+                    }`}
+                  >
+                    {key}. {value}
+                  </Button>
+                ))}
               </div>
-            ))
+            </div>
           )}
         </div>
 
@@ -93,19 +113,30 @@ const QuestionPage = () => {
               Skor Anda: {score} dari {questionsData.length} 🎉🎊
             </h3>
             <p className="text-gray-600">
-              Kamu akan diarahkan kembali kehalaman materi dalam {timeLeft}{" "}
-              detik
+              Kamu akan diarahkan ke halaman sertifikat dalam {timeLeft} detik
             </p>
           </div>
         )}
 
         <div className="flex justify-end pt-5">
-          <Button
-            onClick={handleFinish}
-            disabled={selectedOptions.includes("")}
-          >
-            Selesai
-          </Button>
+          {showScore ? (
+            <Button
+              onClick={() => navigate("/sertifikatpage")}
+              className="bg-blue-600 text-white hover:bg-blue-700"
+            >
+              Lihat Sertifikat
+            </Button>
+          ) : (
+            <Button
+              onClick={handleNextQuestion}
+              disabled={selectedOptions[currentQuestionIndex] === ""}
+              className="bg-blue-600 text-white hover:bg-blue-700 transition duration-300"
+            >
+              {currentQuestionIndex < questionsData.length - 1
+                ? "Berikutnya"
+                : "Selesai"}
+            </Button>
+          )}
         </div>
       </div>
     </div>
